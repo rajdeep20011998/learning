@@ -1,0 +1,85 @@
+<div class ="container">
+  <div class="header">
+    <div class="logo">
+      <mat-icon>keyboard_arrow_left</mat-icon>
+      <img src="../../assets/simplifai-logo.png">
+    </div>
+    <div>
+       <img src="../../assets/action1.svg">
+      Untitled Flow
+      <mat-icon>keyboard_arrow_down</mat-icon>
+    </div>
+    <div><img src="../../assets/Users-sign.png"></div>
+  </div>
+    
+
+  <div class="main-content" >
+    
+    <div class="side-bar">
+      <div class="blocks">
+        Blocks
+        <div class="previous">
+          <img src="../../assets/Previous Arrow.png">  
+        </div>
+      </div>
+      
+      <div class ="search">
+       <form class="example-form">
+
+  <mat-form-field class="example-full-width">
+    <mat-icon matPrefix>search</mat-icon>
+    <input type="tel" matInput placeholder="Search">
+  </mat-form-field>
+  
+</form>
+      </div>
+      
+      <mat-tab-group>
+        
+
+          <mat-tab label="Apps">
+            <div class="example-container">
+
+              <mat-grid-list cols="2" rowHeight="2:2">
+
+                <mat-grid-tile *ngFor="let item of todo" >
+                  <div class="tile">
+                  <div class="example-box" >
+                    <img class="app-icon" [attr.src]="getContent(item, 0)" (click)="getImgPolaroid($event)" >
+                  </div>
+                  <div class=".mat-title">{{getContent(item, 1)}}</div>
+                </div>
+                </mat-grid-tile>
+              </mat-grid-list>
+              </div>
+            
+          </mat-tab>
+          <mat-tab label="Logic">
+           
+            <div class="example-box" *ngFor="let item of todo" ><img class="app-icon"(click)="getImgPolaroid($event)"src={{item}} ></div>
+            
+          </mat-tab>
+           
+      </mat-tab-group>
+    </div>
+    <div class="main">
+      
+      <angular-editor-fabric-js #canvas></angular-editor-fabric-js>
+        
+    </div>
+    
+      <!-- <div class="example-container">
+         
+        <div
+          cdkDropList
+          [cdkDropListData]="done"
+          class="example-list"
+          (cdkDropListDropped)="drop($event)">
+          <div class="example-box" *ngFor="let item of done" cdkDrag><img src={{item}} ></div>
+          
+        </div>
+      </div> -->
+    </div>
+  </div>
+  
+  
